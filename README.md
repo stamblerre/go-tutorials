@@ -8,6 +8,6 @@ To use these tutorials, you'll need an account with Google. A Gmail account will
 
 These tutorials use the [Google Cloud Shell Editor](https://cloud.google.com/shell/docs/editor-overview), an IDE with all of the basic environment dependencies you'll need. 
 
-- [Develop a RESTful API with Go and Gin](web-service-gin.md)
+- [Getting Started with Your IDE](ide.md)
 
-    [![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.png)](https://ssh.cloud.google.com/cloudshell/open?cloudshell_git_repo=https://github.com/stevetraut/go-tutorials&cloudshell_tutorial=web-service-gin.md)
+    [![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.png)](https://ssh.cloud.google.com/cloudshell/open?cloudshell_git_repo=https://github.com/stamblerre/go-tutorials&cloudshell_tutorial=ide.md)
