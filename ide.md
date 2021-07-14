@@ -21,11 +21,11 @@ Let's start by <walkthrough-editor-open-file filePath="cloudshell_open/go-tutori
 This file defines our project. We are working in the
 
 <walkthrough-editor-select-line filePath="cloudshell_open/go-tutorials/example.com/go.mod"
-    startLine="0" startCharacterOffset="8"
+    startLine="0" startCharacterOffset="7"
     endLine="0" endCharacterOffset="19">
 `example.com` module
 </walkthrough-editor-select-line>, and we are developing with <walkthrough-editor-select-line filePath="cloudshell_open/go-tutorials/example.com/go.mod"
-    startLine="2" startCharacterOffset="1"
+    startLine="2" startCharacterOffset="0"
     endLine="2" endCharacterOffset="8">
 Go version 1.16
 </walkthrough-editor-select-line>.
