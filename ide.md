@@ -14,7 +14,7 @@ This is a great tutorial!
 
 ## Open a Go file
 
-Begin by <walkthrough-editor-open-file filePath="src/hello.md">opening the go.mod</walkthrough-editor-spotlight> file for the project.
+Begin by <walkthrough-editor-open-file filePath="example.com/go.mod">opening the go.mod</walkthrough-editor-spotlight> file for the project.
 
 <walkthrough-editor-spotlight spotlightId="menu-file">File Menu</walkthrough-editor-spotlight>
 <walkthrough-editor-spotlight spotlightId="menu-terminal-new-terminal">New Terminal</walkthrough-editor-spotlight>
