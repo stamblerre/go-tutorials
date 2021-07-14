@@ -30,6 +30,16 @@ This file defines our project. We are working in the
 Go version 1.16
 </walkthrough-editor-select-line>.
 
+## Run `go mod tidy`
+
+Click the `Run go mod tidy` code lens at the top of the file.
+
+
+<walkthrough-editor-select-regex filePath="cloudshell_open/go-tutorials/example.com/go.mod"
+                                regex='Run go mod tidy'>
+code lens??
+</walkthrough-editor-select-regex>
+
 <walkthrough-editor-spotlight spotlightId="menu-file">File Menu</walkthrough-editor-spotlight>
 <walkthrough-editor-spotlight spotlightId="menu-terminal-new-terminal">New Terminal</walkthrough-editor-spotlight>
 <walkthrough-editor-spotlight spotlightId="navigator" spotlightItem="go.mod">go.mod file</walkthrough-editor-spotlight>
