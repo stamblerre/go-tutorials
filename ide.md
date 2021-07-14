@@ -10,7 +10,11 @@ date_published:
 
 This is a great tutorial!
 
+## Initialize a `go.mod` file ???
+
 ## Open a Go file
+
+Begin by <walkthrough-editor-open-file filePath="src/hello.md">opening the go.mod</walkthrough-editor-spotlight> file for the project.
 
 <walkthrough-editor-spotlight spotlightId="menu-file">File Menu</walkthrough-editor-spotlight>
 <walkthrough-editor-spotlight spotlightId="menu-terminal-new-terminal">New Terminal</walkthrough-editor-spotlight>
