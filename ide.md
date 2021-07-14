@@ -10,11 +10,25 @@ date_published:
 
 This is a great tutorial!
 
-## Initialize a `go.mod` file ???
+## Initialize a `go.mod` file
 
-## Open a Go file
+Should we do this part in the tutorial?
 
-Begin by <walkthrough-editor-open-file filePath="cloudshell_open/go-tutorials/example.com/go.mod">opening the go.mod</walkthrough-editor-open-file> file for the project.
+## Open a `go.mod` file
+
+Let's start by <walkthrough-editor-open-file filePath="cloudshell_open/go-tutorials/example.com/go.mod">opening the go.mod</walkthrough-editor-open-file> file for the project.
+
+This file defines our project. We are working in the
+
+<walkthrough-editor-select-line filePath="cloudshell_open/go-tutorials/example.com/go.mod"
+    startLine="1" startCharacterOffset="8"
+    endLine="1" endCharacterOffset="19">
+`example.com` module
+</walkthrough-editor-select-line>, and we are developing with <walkthrough-editor-select-line filePath="cloudshell_open/go-tutorials/example.com/go.mod"
+    startLine="3" startCharacterOffset="1"
+    endLine="3" endCharacterOffset="8">
+Go version 1.16
+</walkthrough-editor-select-line>.
 
 <walkthrough-editor-spotlight spotlightId="menu-file">File Menu</walkthrough-editor-spotlight>
 <walkthrough-editor-spotlight spotlightId="menu-terminal-new-terminal">New Terminal</walkthrough-editor-spotlight>
