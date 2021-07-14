@@ -50,64 +50,79 @@ Finally, notice that the additional code lenses now visible in the `go.mod` file
 
 ## Let's start writing some Go code
 
-We're going to work on a function to reverse a string.
-We'll start from our test case, which you can see in
-<walkthrough-editor-open-file filePath="cloudshell_open/go-tutorials/hello.txt">
-this `hello.txt` file
+We're going to work on a function to reverse the contents of the file. Let's take a glance at our test case, which  you can see in
+<walkthrough-editor-open-file filePath="cloudshell_open/go-tutorials/hello.txt">the `hello.txt` file
 </walkthrough-editor-open-file>.
-We're going to write the code to reverse the contents of this file.
+
+We already seem to have some string utilities in our module, so let's search for a useful helper function.
 
 ### Symbol search
 
-We already have a function that reverses a string somewhere in this project,
-so let's use workspace symbol search to find it.
-
-Open the Command Palette by going to the View Menu
+Let's start off by doing a workspace symbol search. Open the Command Palette by going to the View Menu
 and selecting "Find Command", or by using the `Ctrl+Shift+P` keyboard shortcut.
 
-Delete the `>` character in the box. That character indicates that you will search for available commands.
-Type the `#` symbol to indicate that you are doing a workspace symbol search.
-You can use the `@` symbol to start a search for symbols only in the current file.
-Then, type your search keyword. In this case, it is "reverse".
+Delete the `>` character in the box. That character indicates that you will search for available commands. Instead, type the `#` symbol to indicate that you are doing a workspace symbol search. (You can use the `@` symbol to search for symbols in the current file.) Now, type your search keyword. In this case, it is "reverse".
 
-The first result should be in the
-<walkthrough-editor-open-file filePath="cloudshell_open/go-tutorials/example.com/stringutil/reverse.go">
-`reverse.go`
-</walkthrough-editor-open-file>.
-Select that result and go to the function definition.
+Select the first result. It should take you to the 
+<walkthrough-editor-select-regex filePath="cloudshell_open/go-tutorials/example.com/stringutil/reverse.go" regex='Reverse'>
+definition of the `Reverse` function</walkthrough-editor-select-regex> in the <walkthrough-editor-open-file filePath="cloudshell_open/go-tutorials/example.com/stringutil/reverse.go">`reverse.go`</walkthrough-editor-open-file> file. We will use this helper function to write our own `ReverseFile` function.
 
-## Writing a new function
+### Implementing `ReverseFile`
 
 Let's write a new function, which we will call `ReverseFile`.
 
-Type out the following function signature:
+Paste the following function signature below `Reverse` in <walkthrough-editor-open-file filePath="cloudshell_open/go-tutorials/example.com/stringutil/reverse.go">`reverse.go`</walkthrough-editor-open-file>:
 
 
 ```go
+// ReverseFile reverses the content of a file.
 func ReverseFile(filename string) (string, error) {}
 ```
 
-Notice that you are offered autocompletion as you type.
+In the body of the function, start writing out:
 
-### Read file contents
-
-The first step will be to read in the contents of the file.
-Begin typing the following into the body of the function:
-
-
-∂Type the following in the function body:
 
 ```go
-    contents, err := os.
+content, err := os.
 ```
 
-Notice the autocompletion result
-and accept the autocompletion results. The "os" package will be automatically imported into your file.
+Completion results should pop up. Hover over the `ReadFile` option. You can read the function's documentation by pressing `Ctrl+Space`. Hit `Enter` and accept the completion result. Notice that <walkthrough-editor-select-regex filePath="cloudshell_open/go-tutorials/example.com/stringutil/reverse.go" regex='import "os"'>the `os` package</walkthrough-editor-select-regex> was imported automatically when you accepted the completion. Pass `filename` as an argument to `ReadFile`. Your code should now look like:
 
-<walkthrough-editor-spotlight spotlightId="menu-terminal-new-terminal">New Terminal</walkthrough-editor-spotlight>
-<walkthrough-editor-spotlight spotlightId="navigator" spotlightItem="go.mod">go.mod file</walkthrough-editor-spotlight>
-<walkthrough-editor-spotlight spotlightId="menu-file">File Menu</walkthrough-editor-spotlight>
-<walkthrough-editor-spotlight spotlightId="menu-run">Run menu</walkthrough-editor-spotlight>
-<walkthrough-editor-spotlight spotlightId="menu-run-start-without-debugging">Start without debugging</walkthrough-editor-spotlight>
-<walkthrough-editor-spotlight spotlightId="debug-configuration">Debug configuration panel</walkthrough-editor-spotlight>
-<walkthrough-editor-spotlight spotlightId="menu-run-start-without-debugging">Start without debugging</walkthrough-editor-spotlight>
+```go
+content, err := os.ReadFile(filename)
+```
+
+You should see some red squiggles, indicating errors in your code. Explanations for the errors should appear as you hover over them, or you can toggle the Problems view via the Command Palette.
+
+We'll handle the `err` variable first.
+<!--The following requires that placeholders are enabled.-->
+Trigger a completion on the next line by pressing `Ctrl+Space`. You should see a completion result that says `if err != nil { return err }`. Accept the completion result, and it will add error handling.
+
+Finally, use the `Reverse` function to reverse the file content. Below the error handling, type `return Reverse(`.
+Trigger an autocompletion (`Ctrl+Space`) and select `content` from the completion list. The editor will add the appropriate case to convert `content` from a byte slice to a string.
+
+<!--TODO(rstambler): Use a quickfix to add this return.-->
+Finally add `nil` as the second return.
+
+Your function should now look like this:
+
+```go
+// ReverseFile reverses the content of a file.
+func ReverseFile(filename string) (string, error) {
+    content, err := os.ReadFile(filename)
+    if err != nil {
+        return "", err
+    }
+    return Reverse(content), nil
+}
+```
+
+## Test your function
+
+### Generating a unit test
+
+### Adding test cases
+
+### `Run test` vs. `debug test`
+
+## Debugging your test
