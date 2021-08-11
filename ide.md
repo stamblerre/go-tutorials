@@ -101,8 +101,8 @@ Trigger a completion on the next line by pressing `Ctrl+Space`. You should see a
 Finally, use the `Reverse` function to reverse the file content. Below the error handling, type `return Reverse(`.
 Trigger an autocompletion (`Ctrl+Space`) and select `content` from the completion list. The editor will add the appropriate case to convert `content` from a byte slice to a string.
 
-<!--TODO(rstambler): Use a quickfix to add this return.-->
-Finally add `nil` as the second return.
+Finally, notice the diagnostic that says there is an incorrect number of return values for this function.
+Use the associated "Fill in return values" quick fix to add a second return value of `nil`.
 
 Your function should now look like this:
 
@@ -113,17 +113,51 @@ func ReverseFile(filename string) (string, error) {
     if err != nil {
         return "", err
     }
-    return Reverse(content), nil
+    return Reverse(string(content)), nil
 }
 ```
 
 ## Test your function
 
+Next, we need to test our function to confirm that it works correctly.
+
 ### Generating a unit test
+
+The Go extension has convenient features for generating unit tests. We can access these features by going to the Command Palette (Ctrl+Shift+P)
+and selecting the "Go: Generate Unit Tests For Function" command.
+
+Notice that a complete table-driven test has been generated in the
+<walkthrough-editor-select-regex filePath="cloudshell_open/go-tutorials/example.com/stringutil/reverse_test.go" regex='TestReverseFile'>`reverse_test.go` file</walkthrough-editor-select-regex>.
 
 ### Adding test cases
 
+All we have to do now is <walkthrough-editor-select-regex filePath="cloudshell_open/go-tutorials/example.com/stringutil/reverse_test.go" regex='TODO: Add test cases.'>add test cases</walkthrough-editor-select-regex>.
+
+Replace this statement with `{},`, which is the struct declaration you will use to declare your first case.
+We can simplify this process even further by using the "Fill struct" quick fix. It should appear as a lightbulb next to the `{},`, when you select it with your cursor.
+This will fill this empty struct declaration with the default values for this type.
+
+Name the test case `"hello"`, provide the `filename` argument as `../hello.txt`, and an expected output of `Hello, world`.
+When you are done, your test case should look like this:
+
+
+```go
+{
+    name: "hello",
+    args: args{
+        filename: "../hello.txt",
+    },
+    want: "Hello, world",
+    wantErr: false,
+}
+```
+
+Feel free to add additional test cases to cover more corner cases.
+
 ### `Run test` vs. `debug test`
+
+You can run your test by using the `run test` code lens that appears above the function signature.
+Notice that there is also a `debug test` code lens. We can use this to debug our program and investigate any crashes or test failures.
 
 ## Debugging your test
 
