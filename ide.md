@@ -126,3 +126,21 @@ func ReverseFile(filename string) (string, error) {
 ### `Run test` vs. `debug test`
 
 ## Debugging your test
+
+Open the <walkthrough-editor-spotlight spotlightId="activity-bar-debug">debug</walkthrough-editor-spotlight> view.
+
+<!-- 
+
+TODO(suzmue): The legacy adapter does not support function breakpoints, and cloud code does not yet run a version of the Go extension that supports dlv dap.
+
+### Setting Breakpoints
+
+Let's set a breakpoint on `Reverse`. We could navigate back to the file and set a breakpoint on the location where we defined the function, or we can set the breakpoint by using the function name.
+
+ Click the (`+`) icon in the `BREAKPOINTS` section to add a function breakpoint.
+
+![`Add Function Breakpoint` in debug view](media/addFunctionBreakpoint.png)
+
+Type in `Reverse` in the input box and hit `OK`. The new breakpoint should now appear in the breakpoints section of the debug view.
+
+![A function breakpoint is displayed with a triangle.](media/functionBp.png) -->
