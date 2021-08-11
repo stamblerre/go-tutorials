@@ -127,7 +127,7 @@ The Go extension has convenient features for generating unit tests. We can acces
 and selecting the "Go: Generate Unit Tests For Function" command.
 
 Notice that a complete table-driven test has been generated in the
-<walkthrough-editor-select-regex filePath="cloudshell_open/go-tutorials/example.com/stringutil/reverse_test.go" regex='TestReverseFile'>`reverse_test.go` file</walkthrough-editor-select-regex>.
+<walkthrough-editor-select-regex filePath="example.com/stringutil/reverse_test.go" regex='TestReverseFile'>`reverse_test.go` file</walkthrough-editor-select-regex>.
 
 ### Adding test cases
 
