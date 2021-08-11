@@ -10,4 +10,4 @@ These tutorials use the [Google Cloud Shell Editor](https://cloud.google.com/she
 
 - [Getting Started with Your IDE](ide.md)
 
-    [![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.png)](https://ssh.cloud.google.com/cloudshell/open?cloudshell_git_repo=https://github.com/stamblerre/go-tutorials&cloudshell_tutorial=ide.md&cloud_shell_workspace=example.com)
+    [![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.png)](https://ssh.cloud.google.com/cloudshell/open?cloudshell_git_repo=https://github.com/stamblerre/go-tutorials&cloudshell_workspace=./&cloudshell_tutorial=ide.md)
